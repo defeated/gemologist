@@ -16,7 +16,7 @@ module Gemologist
 
     def self.root
       @@root ||= begin
-        result = Pathname.new(File.dirname(__FILE__)).join('../../repositories')
+        result = Pathname.new('~/.gemologist/repositories').expand_path
         result.mkpath
         result.realpath
       end
